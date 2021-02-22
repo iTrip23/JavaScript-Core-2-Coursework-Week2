@@ -157,3 +157,12 @@ body {
     max-height: 80px;
   }
 }
+
+ul li {
+  background-color: red;
+}
+
+.checked {
+  text-decoration: line-through;
+  background-color: green;
+}
