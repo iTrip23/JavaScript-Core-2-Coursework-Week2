@@ -1,10 +1,5 @@
 let content = document.querySelector('#content');
 let ulEl = document.createElement('ul');
-ulEl.addEventListener('click', function (el) {
-  if (el.target.tagName === 'LI') {
-    el.target.classList.toggle('checked');
-  }
-}, false);
 ulEl.style.height = '100vh';
 ulEl.style.display = 'flex';
 ulEl.style.flexDirection = 'column';
@@ -23,17 +18,12 @@ function todoList(array) {
     liEl.style.width = '200px';
     liEl.style.cursor = 'pointer';
     liEl.style.textAlign = 'center';
-
-    ulEl.appendChild(liEl)
+    liEl.addEventListener('click', function (liEl) {
+      liEl.target.classList.toggle('checked');
+    });
+    ulEl.appendChild(liEl);
   }
 }
-
-// document.querySelector('ul li').addEventListener('click', function (elem) {
-//   let elem = document.querySelector('ul li');
-//   elem.style.textDecoration = 'line-through';
-//   elem.style.backgroundColor = 'green';
-// })
-
 
 const todos = [
   { todo: "wash the dishes" },
