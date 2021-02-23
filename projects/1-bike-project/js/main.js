@@ -43,11 +43,15 @@ submitEl.addEventListener('click', function (event) {
     }
     if (emailEl.value.length === 0 && !(/[@]/.test(emailEl.value))) {
         emailEl.style.backgroundColor = 'red';
-    } else {
+    }
+    if (nameEl.value.length > 0 && textEl.value.length > 0 && emailEl.value.length > 0 && /[@]/.test(emailEl.value)) {
         window.alert('Thank you for filling out the form!');
         emailEl.value = '';
         nameEl.value = '';
         textEl.value = '';
+        nameEl.style.backgroundColor = 'white';
+        textEl.style.backgroundColor = 'white';
+        emailEl.style.backgroundColor = 'white';
     }
     event.preventDefault();
 });
