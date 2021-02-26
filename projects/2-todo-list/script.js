@@ -17,8 +17,9 @@ function populateTodoList(todos) {
     spEl.appendChild(checkEl);
     spEl.appendChild(delEl);
     checkEl.addEventListener('click', function () {
-      liEl.style.textDecoration = 'line-through';
-      // liEl.target.classList.toggle('checked');
+      if (liEl.style.textDecoration === '') {
+        liEl.style.textDecoration = 'line-through';
+      } else liEl.style.textDecoration = '';
     });
     delEl.addEventListener('click', function () {
       liEl.remove();
