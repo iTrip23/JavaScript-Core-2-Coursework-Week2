@@ -6,7 +6,6 @@ let tries = 1;
 triesEl.innerText = `You have ${numOfTries} tries`;
 let inputEl = document.querySelector(".inputs-Values");
 inputEl.value = '';
-console.log(randomNumber);
 
 function guessNumber() {
   //Collect input from the user
@@ -17,14 +16,14 @@ function guessNumber() {
   }
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
   if (guess > randomNumber) {
-    numOfTries -= 1;
+    numOfTries--;
     tries++;
     triesEl.innerText = `You have ${numOfTries}`;
     finalEl.innerText = 'Number is too high, try again';
   }
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
   if (guess < randomNumber) {
-    numOfTries -= 1;
+    numOfTries--;
     tries++;
     triesEl.innerText = `You have ${numOfTries}`;
     finalEl.innerText = 'Number is too low, try again';
