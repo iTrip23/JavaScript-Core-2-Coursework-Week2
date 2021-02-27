@@ -4,6 +4,8 @@ let triesEl = document.querySelector('.Tries-output');
 let numOfTries = 7;
 let tries = 1;
 triesEl.innerText = `You have ${numOfTries} tries`;
+let inputEl = document.querySelector(".inputs-Values");
+inputEl.value = '';
 console.log(randomNumber);
 
 function guessNumber() {
@@ -42,7 +44,16 @@ function guessNumber() {
 // Once the user clicks on this button the user will have new random number to guess
 // 1. Reset the values inside the body of the function
 // 2. Attach our new game button using an event listener to the .btnNewGame button
+let newBtn = document.querySelector('.btnNewGame');
+newBtn.addEventListener('click', newGame)
+
 function newGame() {
+  randomNumber = Math.floor(Math.random() * 100 + 1);
+  numOfTries = 7;
+  tries = 1;
+  inputEl.value = '';
+  triesEl.innerText = `You have ${numOfTries} tries`;
+  finalEl.innerText = 'Please enter a number between 1 and 100';
   //Your code here
   //Reset randomNumber
   //Reset users input field
